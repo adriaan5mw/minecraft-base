@@ -1,0 +1,10 @@
+updateUsersToNewDefaultHome: false
+movemotdToFile: false
+moveWorthValuesToWorthYml: false
+moverulesToFile: false
+updateUsersPowerToolsFormat: false
+sanitizeAllUserFilenames: false
+deleteOldItemsCsv: false
+updateJailsToNewJailsConfig: true
+updateSpawnsToNewSpawnsConfig: true
+updateUsersHomesFormat: false

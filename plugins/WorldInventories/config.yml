@@ -1,0 +1,10 @@
+domiimport: false
+saveinterval: 0
+donotifications: true
+dostats: false
+groups:
+    examplegrouptwo:
+    - exampleworldthree
+    exampleworldone:
+    - exampleworldone
+    - exampleworldtwo

@@ -1,0 +1,7 @@
+cfg-version: 4
+message: You have reached the edge of this world.
+round-border: true
+debug-mode: false
+whoosh-effect: false
+knock-back-dist: 3.0
+timer-delay-ticks: 5
