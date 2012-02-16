@@ -1,0 +1,21 @@
+## Logs
+*.log
+*.lck
+*.1
+.server.log.swp
+
+## maps
+maps/*
+*/level.*
+*/region/*.mcr
+*/session.lock
+*/uid.dat
+
+## Nether and The End
+*/DIM*/level.*
+*/DIM*/region/*.mcr
+*/DIM*/session.lock
+*/DIM*/uid.dat
+
+## Garbage
+.DS_Store
