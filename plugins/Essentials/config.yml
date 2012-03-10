@@ -27,7 +27,7 @@
 ############################################################
 
 # A color code between 0-9 or a-f. Set to 'none' to disable.
-ops-name-color: 'c'
+ops-name-color: 'none'
 
 # The character(s) to prefix all nicknames, so that you know they are not true usernames.
 nickname-prefix: '~'
@@ -95,77 +95,15 @@ disabled-commands:
 # They are here only if you want something simpler than Permissions.
 # These are the permissions without the "essentials." part.
 player-commands:
-  - afk
-  - back
-  - back.ondeath
-  - balance
-  - clearinventory
-  - compass
-  - depth
-  - getpos
-  - geoip.show
-  - help
-  - helpop
-  - home
-  - home.others
-  - ignore
-  - info
-  - kit
-  - list
-  - mail
-  - mail.send
-  - me
-  - motd
-  - msg
-  - nick
-  - pay
-  - ping
-  - powertool
-  - protect
-  - r
-  - rules
-  - seen
-  - sell
-  - sethome
-  - setxmpp
-  - signs.create.protection
-  - signs.create.trade
-  - signs.break.protection
-  - signs.break.trade
-  - signs.use.balance
-  - signs.use.buy
-  - signs.use.disposal
-  - signs.use.free
-  - signs.use.heal
-  - signs.use.mail
-  - signs.use.protection
-  - signs.use.sell
-  - signs.use.time
-  - signs.use.trade
-  - signs.use.warp
-  - signs.use.weather
-  - spawn
-  - suicide
-  - tpa
-  - tpaccept
-  - tpahere
-  - tpdeny
-  - warp
-  - warp.list
-  - world
-  - worth
-  - xmpp
 
 # Note: All items MUST be followed by a quantity!
 # All kit names should be lower case, and will be treated as lower in permissions/costs.
 # Times are measured in seconds.
 kits:
-  tools:
-    delay: 10
+  sample:
+    delay: 500
     items:
-      - 277 1
-      - 278 1
-      - 279 1
+      - 1 1
 
 # Essentials Sign Control
 # See http://ess.khhq.net/wiki/Sign_Tutorial for instructions on how to use these.
@@ -201,7 +139,7 @@ backup:
 per-warp-permission: false
 
 # Sort output of /list command by groups
-sort-list-by-groups: false
+sort-list-by-groups: true
 
 # More output to the console
 debug: false
@@ -226,7 +164,7 @@ auto-afk: 300
 # Auto-AFK Kick
 # After this timeout in seconds, the user will be kicked from the server.
 # Set to -1 for no timeout.
-auto-afk-kick: -1
+auto-afk-kick: 500
 
 # Set this to true, if you want to freeze the player, if he is afk.
 # Other players or monsters can't push him out of afk mode then.
@@ -285,11 +223,14 @@ update-bed-at-daytime: true
 # People with essentials.sethome.multiple.unlimited are not limited by these numbers.
 sethome-multiple:  
   # essentials.sethome.multiple
-  default: 3
+  default: 1
+  # essentials.sethome.multiple.sponsor
+  sponsor: 30
   # essentials.sethome.multiple.vip
-  vip: 5
+  vip: 50
   # essentials.sethome.multiple.staff
-  staff: 10
+  staff: 30
+
 
 #Set timeout in seconds for players to accept tpa before request is cancelled.
 #Set to 0 for no timeout
@@ -302,7 +243,7 @@ tpa-accept-cancellation: 0
 ############################################################
 
 # Defines the balance with which new players begin.  Defaults to 0.
-starting-balance: 0
+starting-balance: 100
 
 # worth-# defines the value of an item when it is sold to the server via /sell.
 # These are now defined in worth.yml
@@ -319,7 +260,7 @@ currency-symbol: '$'
 
 # Set the maximum amount of money a player can have
 # The amount is always limited to 10 trillions because of the limitations of a java double
-max-money: 10000000000000
+max-money: 1000000000
 
 # Enable this to log all interactions with trade/buy/sell signs and sell command
 economy-log-enabled: false
@@ -359,10 +300,11 @@ chat:
   # If set to the default chat format which "should" be compatible with ichat.
   # For more information of chat formatting, check out the wiki: http://ess.khhq.net/wiki/Chat_Formatting  
   
-  format: '<{DISPLAYNAME}> {MESSAGE}'
+  format: '{DISPLAYNAME}: {MESSAGE}'
   #format: '&7[{GROUP}]&f {DISPLAYNAME}&7:&f {MESSAGE}'
     
   group-formats:
+  #  Already handled by GroupManager
   #  Default: '{WORLDNAME} {DISPLAYNAME}&7:&f {MESSAGE}'
   #  Admins: '{WORLDNAME} &c[{GROUP}]&f {DISPLAYNAME}&7:&c {MESSAGE}'
 
@@ -370,167 +312,167 @@ chat:
 
 
 
-############################################################
-# +------------------------------------------------------+ #
-# |                 EssentialsProtect                    | #
-# +------------------------------------------------------+ #
-############################################################
+# ############################################################
+# # +------------------------------------------------------+ #
+# # |                 EssentialsProtect                    | #
+# # +------------------------------------------------------+ #
+# ############################################################
 
-protect:
-  # Database settings for sign/rail protection
+# protect:
+#   # Database settings for sign/rail protection
 
-  # mysql or sqlite
-  datatype: 'sqlite'
+#   # mysql or sqlite
+#   datatype: 'sqlite'
 
-  # If you specified MySQL above, you MUST enter the appropriate details here.
-  # If you specified SQLite above, these will be IGNORED.
-  username: 'root'
-  password: 'root'
-  mysqlDb: 'jdbc:mysql://localhost:3306/minecraft'
+#   # If you specified MySQL above, you MUST enter the appropriate details here.
+#   # If you specified SQLite above, these will be IGNORED.
+#   username: 'root'
+#   password: 'root'
+#   mysqlDb: 'jdbc:mysql://localhost:3306/minecraft'
 
-  # For which block types would you like to be alerted?
-  # You can find a list of IDs in plugins/Essentials/items.csv after loading Essentials for the first time.
-  # 10 = lava :: 11 = still lava :: 46 = TNT :: 327 = lava bucket
-  alert:
-    on-placement: 10,11,46,327
-    on-use: 327
-    on-break: 
+#   # For which block types would you like to be alerted?
+#   # You can find a list of IDs in plugins/Essentials/items.csv after loading Essentials for the first time.
+#   # 10 = lava :: 11 = still lava :: 46 = TNT :: 327 = lava bucket
+#   alert:
+#     on-placement: 10,11,46,327
+#     on-use: 327
+#     on-break: 
 
-  blacklist:
+#   blacklist:
 
-    # Which blocks should people be prevented from placing
-    placement: 10,11,46,327
+#     # Which blocks should people be prevented from placing
+#     placement: 10,11,46,327
     
-    # Which items should people be prevented from using
-    usage: 327
+#     # Which items should people be prevented from using
+#     usage: 327
     
-    # Which blocks should people be prevented from breaking
-    break:
+#     # Which blocks should people be prevented from breaking
+#     break:
     
-    # Which blocks should not be pushed by pistons
-    piston:
+#     # Which blocks should not be pushed by pistons
+#     piston:
 
-  # General physics/behavior modifications
-  prevent:
-    lava-flow: false
-    water-flow: false
-    water-bucket-flow: false
-    fire-spread: true
-    lava-fire-spread: true
-    flint-fire: false
-    lightning-fire-spread: true
-    portal-creation: false
-    tnt-explosion: false
-    tnt-playerdamage: false
-    fireball-explosion: false
-    fireball-fire: false
-    fireball-playerdamage: false
-    creeper-explosion: false
-    creeper-playerdamage: false
-    creeper-blockdamage: false
-    enderdragon-blockdamage: true
-    enderman-pickup: false
-    villager-death: false
-    # Monsters won't follow players
-    # permission essentials.protect.entitytarget.bypass disables this
-    entitytarget: false
-    # Prevent the spawning of creatures
-    spawn:
-      chicken: false
-      cow: false
-      creeper: false
-      ghast: false
-      giant: false
-      monster: false
-      pig: false
-      pig_zombie: false
-      sheep: false
-      skeleton: false
-      slime: false
-      spider: false
-      squid: false
-      zombie: false
-      wolf: false
-      cave_spider: false
-      enderman: false
-      silverfish: false
-      ender_dragon: false
-      villager: false
-      blaze: false
-      mushroom_cow: false
-      magma_cube: false
-      snowman: false
+#   # General physics/behavior modifications
+#   prevent:
+#     lava-flow: false
+#     water-flow: false
+#     water-bucket-flow: false
+#     fire-spread: true
+#     lava-fire-spread: true
+#     flint-fire: false
+#     lightning-fire-spread: true
+#     portal-creation: false
+#     tnt-explosion: false
+#     tnt-playerdamage: false
+#     fireball-explosion: false
+#     fireball-fire: false
+#     fireball-playerdamage: false
+#     creeper-explosion: false
+#     creeper-playerdamage: false
+#     creeper-blockdamage: false
+#     enderdragon-blockdamage: true
+#     enderman-pickup: false
+#     villager-death: false
+#     # Monsters won't follow players
+#     # permission essentials.protect.entitytarget.bypass disables this
+#     entitytarget: false
+#     # Prevent the spawning of creatures
+#     spawn:
+#       chicken: false
+#       cow: false
+#       creeper: false
+#       ghast: false
+#       giant: false
+#       monster: false
+#       pig: false
+#       pig_zombie: false
+#       sheep: false
+#       skeleton: false
+#       slime: false
+#       spider: false
+#       squid: false
+#       zombie: false
+#       wolf: false
+#       cave_spider: false
+#       enderman: false
+#       silverfish: false
+#       ender_dragon: false
+#       villager: false
+#       blaze: false
+#       mushroom_cow: false
+#       magma_cube: false
+#       snowman: false
   
-  # Maximum height the creeper should explode. -1 allows them to explode everywhere.
-  # Set prevent.creeper-explosion to true, if you want to disable creeper explosions.
-  creeper:
-    max-height: -1
+#   # Maximum height the creeper should explode. -1 allows them to explode everywhere.
+#   # Set prevent.creeper-explosion to true, if you want to disable creeper explosions.
+#   creeper:
+#     max-height: -1
   
-  # Protect various blocks.
-  protect:
-    # Protect all signs
-    signs: true
+#   # Protect various blocks.
+#   protect:
+#     # Protect all signs
+#     signs: true
 
-    # Prevent users from destroying rails
-    rails: true
+#     # Prevent users from destroying rails
+#     rails: true
 
-    # Blocks below rails/signs are also protected if the respective rail/sign is protected.
-    # This makes it more difficult to circumvent protection, and should be enabled.
-    # This only has an effect if "rails" or "signs" is also enabled.
-    block-below: true
+#     # Blocks below rails/signs are also protected if the respective rail/sign is protected.
+#     # This makes it more difficult to circumvent protection, and should be enabled.
+#     # This only has an effect if "rails" or "signs" is also enabled.
+#     block-below: true
 
-    # Prevent placing blocks above protected rails, this is to stop a potential griefing
-    prevent-block-on-rails: false
+#     # Prevent placing blocks above protected rails, this is to stop a potential griefing
+#     prevent-block-on-rails: false
     
-    # Store blocks / signs in memory before writing
-    memstore: false
+#     # Store blocks / signs in memory before writing
+#     memstore: false
 
-  # Disable various default physics and behaviors
-  disable:
-    # Should fall damage be disabled?
-    fall: false
+#   # Disable various default physics and behaviors
+#   disable:
+#     # Should fall damage be disabled?
+#     fall: false
 
-    # Users with the essentials.protect.pvp permission will still be able to attack each other if this is set to true.
-    # They will be unable to attack users without that same permission node.
-    pvp: false
+#     # Users with the essentials.protect.pvp permission will still be able to attack each other if this is set to true.
+#     # They will be unable to attack users without that same permission node.
+#     pvp: false
 
-    # Should drowning damage be disabled?
-    # (Split into two behaviors; generally, you want both set to the same value)
-    drown: false
-    suffocate: false
+#     # Should drowning damage be disabled?
+#     # (Split into two behaviors; generally, you want both set to the same value)
+#     drown: false
+#     suffocate: false
 
-    # Should damage via lava be disabled?  Items that fall into lava will still burn to a crisp. ;)
-    lavadmg: false
+#     # Should damage via lava be disabled?  Items that fall into lava will still burn to a crisp. ;)
+#     lavadmg: false
 
-    # Should arrow damage be disabled
-    projectiles: false
+#     # Should arrow damage be disabled
+#     projectiles: false
 
-    # This will disable damage from touching cacti.
-    contactdmg: false
+#     # This will disable damage from touching cacti.
+#     contactdmg: false
 
-    # Burn, baby, burn!  Should fire damage be disabled?
-    firedmg: false
+#     # Burn, baby, burn!  Should fire damage be disabled?
+#     firedmg: false
     
-    # Should the damage after hit by a lightning be disabled?
-    lightning: false
+#     # Should the damage after hit by a lightning be disabled?
+#     lightning: false
 
-    # Should people with build: false in permissions be allowed to build
-    # Set true to disable building for those people
-    build: true
+#     # Should people with build: false in permissions be allowed to build
+#     # Set true to disable building for those people
+#     build: true
     
-    # Should people with build: false in permissions be allowed to use items
-    # Set true to disable useing for those people
-    use: true
+#     # Should people with build: false in permissions be allowed to use items
+#     # Set true to disable useing for those people
+#     use: true
 
-    # Should we tell people they are not allowed to build
-    warn-on-build-disallow: true
+#     # Should we tell people they are not allowed to build
+#     warn-on-build-disallow: true
 
 
-    # Disable weather options
-    weather:
-      storm: false
-      thunder: false
-      lightning: false
+#     # Disable weather options
+#     weather:
+#       storm: false
+#       thunder: false
+#       lightning: false
 
 ############################################################
 # +------------------------------------------------------+ #

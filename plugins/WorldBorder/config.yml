@@ -5,3 +5,8 @@ debug-mode: false
 whoosh-effect: false
 knock-back-dist: 3.0
 timer-delay-ticks: 5
+worlds:
+  world:
+    x: 0.0
+    z: 0.0
+    radius: 500
