@@ -8,6 +8,7 @@
 maps/*
 */level.*
 */region/*.mcr
+*/players/*.dat
 */session.lock
 */uid.dat
 
