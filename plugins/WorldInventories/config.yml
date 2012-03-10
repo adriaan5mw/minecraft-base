@@ -4,8 +4,8 @@ donotifications: true
 dostats: false
 groups:
     survival:
-    - world
-    - world_the_end
-    - world_nether
+    - my_world
+    - my_world_the_end
+    - my_world_nether
     creative:
-    - my_creative_world
+    - my_world_creative

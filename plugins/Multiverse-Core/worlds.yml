@@ -98,7 +98,7 @@ worlds:
       world: my_world_the_end
     autoload: true
     bedrespawn: true
-  my_creative_world:
+  my_world_creative:
     seed: -1264822131588807993
     environment: NORMAL
     hidden: false
@@ -128,7 +128,7 @@ worlds:
       z: 258.5
       pitch: 0.0
       yaw: 0.0
-      world: my_creative_world
+      world: my_world_creative
     autoload: true
     bedrespawn: true
   world:

@@ -6,7 +6,19 @@ whoosh-effect: false
 knock-back-dist: 3.0
 timer-delay-ticks: 5
 worlds:
-  world:
+  my_world:
+    x: 0.0
+    z: 0.0
+    radius: 500
+  my_world_nether:
+    x: 0.0
+    z: 0.0
+    radius: 500
+  my_world_the_end:
+    x: 0.0
+    z: 0.0
+    radius: 500
+  my_world_creative:
     x: 0.0
     z: 0.0
     radius: 500
