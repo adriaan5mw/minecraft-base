@@ -1,1 +1,1 @@
-# use groupmanager instead.
+# Use GroupManager instead.
