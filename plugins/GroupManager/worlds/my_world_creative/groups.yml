@@ -7,50 +7,43 @@
 # and defined in the this groups.yml file.
 
 groups:
-  Default:
+  Visitor:
     default: true
-    permissions:
-    - -bukkit.command.kill
+    permissions: []
     inheritance:
-    - g:essentials_default
-    - g:bukkit_default
+    - g:Visitor
     info:
-      prefix: '&e'
+      prefix: '&7[V]&f'
       build: false
       suffix: ''
-  Builder:
+  Member:
     default: false
     permissions: []
     inheritance:
-    - default
-    - g:essentials_builder
-    - g:towny_moderator
+    - Visitor
+    - g:Creative_Member
     info:
-      prefix: '&2'
+      prefix: '&b[M]&f'
       build: true
       suffix: ''
   Moderator:
     default: false
     permissions: []
     inheritance:
-    - builder
-    - g:essentials_moderator
-    - g:bukkit_moderator
-    - g:towny_moderator
+    - Member
+    - g:Moderator
     info:
-      prefix: '&5'
+      prefix: '&9[MOD]&f'
       build: true
       suffix: ''
-  Admin:
+  Operator:
     default: false
     permissions: []
     inheritance:
-    - moderator
-    - g:essentials_admin
-    - g:bukkit_admin
-    - g:towny_admin
+    - Moderator
+    - g:Operator
     info:
-      prefix: '&c'
+      prefix: '&c[OP]&f'
       build: true
       suffix: ''
   Owner:
@@ -58,8 +51,9 @@ groups:
     permissions:
     - '*'
     inheritance:
-    - admin
+    - Operator
+    - g:owner
     info:
-      prefix: '&4'
+      prefix: '&c~&f'
       build: true
       suffix: ''

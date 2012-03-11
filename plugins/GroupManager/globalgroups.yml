@@ -120,3 +120,31 @@ groups:
     permissions:
       - '*'
       - bukkit.*
+
+  g:Creative_Member:
+    permissions:
+      - essentials.afk
+      - essentials.compass
+      - essentials.getpos
+      - essentials.home
+      - essentials.ignore
+      - essentials.mail
+      - essentials.mail.send
+      - essentials.me
+      - essentials.msg
+      - essentials.nick
+      - essentials.ping
+      - essentials.realname
+      - essentials.seen
+      - essentials.suicide
+      - essentials.time
+      - essentials.time.set
+      - essentials.tpa
+      - essentials.tpaccept
+      - essentials.tpahere
+      - essentials.tpdeny
+      - essentials.warp
+      - essentials.warp.list
+      - essentials.worth
+      - worldedit.navigation.jumpto
+      - worldedit.navigation.thru
