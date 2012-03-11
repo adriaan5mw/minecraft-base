@@ -35,6 +35,7 @@ auto-updater:
   - warn-ops
   preferred-channel: rb
   host: dl.bukkit.org
+  suggest-channels: true
 database:
   username: bukkit
   isolation: SERIALIZABLE
