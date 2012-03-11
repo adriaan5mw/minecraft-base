@@ -318,161 +318,161 @@ chat:
 # # +------------------------------------------------------+ #
 # ############################################################
 
-# protect:
-#   # Database settings for sign/rail protection
+protect:
+  # Database settings for sign/rail protection
 
-#   # mysql or sqlite
-#   datatype: 'sqlite'
+  # mysql or sqlite
+  datatype: 'sqlite'
 
-#   # If you specified MySQL above, you MUST enter the appropriate details here.
-#   # If you specified SQLite above, these will be IGNORED.
-#   username: 'root'
-#   password: 'root'
-#   mysqlDb: 'jdbc:mysql://localhost:3306/minecraft'
+  # If you specified MySQL above, you MUST enter the appropriate details here.
+  # If you specified SQLite above, these will be IGNORED.
+  username: 'root'
+  password: 'root'
+  mysqlDb: 'jdbc:mysql://localhost:3306/minecraft'
 
-#   # For which block types would you like to be alerted?
-#   # You can find a list of IDs in plugins/Essentials/items.csv after loading Essentials for the first time.
-#   # 10 = lava :: 11 = still lava :: 46 = TNT :: 327 = lava bucket
-#   alert:
-#     on-placement: 10,11,46,327
-#     on-use: 327
-#     on-break: 
+  # For which block types would you like to be alerted?
+  # You can find a list of IDs in plugins/Essentials/items.csv after loading Essentials for the first time.
+  # 10 = lava :: 11 = still lava :: 46 = TNT :: 327 = lava bucket
+  alert:
+    on-placement: 46
+    on-use: 327
+    on-break: 57,41
 
-#   blacklist:
+  blacklist:
 
-#     # Which blocks should people be prevented from placing
-#     placement: 10,11,46,327
-    
-#     # Which items should people be prevented from using
-#     usage: 327
-    
-#     # Which blocks should people be prevented from breaking
-#     break:
-    
-#     # Which blocks should not be pushed by pistons
-#     piston:
+    # Which blocks should people be prevented from placing
+    placement: 7,8,9,10,11,52
 
-#   # General physics/behavior modifications
-#   prevent:
-#     lava-flow: false
-#     water-flow: false
-#     water-bucket-flow: false
-#     fire-spread: true
-#     lava-fire-spread: true
-#     flint-fire: false
-#     lightning-fire-spread: true
-#     portal-creation: false
-#     tnt-explosion: false
-#     tnt-playerdamage: false
-#     fireball-explosion: false
-#     fireball-fire: false
-#     fireball-playerdamage: false
-#     creeper-explosion: false
-#     creeper-playerdamage: false
-#     creeper-blockdamage: false
-#     enderdragon-blockdamage: true
-#     enderman-pickup: false
-#     villager-death: false
-#     # Monsters won't follow players
-#     # permission essentials.protect.entitytarget.bypass disables this
-#     entitytarget: false
-#     # Prevent the spawning of creatures
-#     spawn:
-#       chicken: false
-#       cow: false
-#       creeper: false
-#       ghast: false
-#       giant: false
-#       monster: false
-#       pig: false
-#       pig_zombie: false
-#       sheep: false
-#       skeleton: false
-#       slime: false
-#       spider: false
-#       squid: false
-#       zombie: false
-#       wolf: false
-#       cave_spider: false
-#       enderman: false
-#       silverfish: false
-#       ender_dragon: false
-#       villager: false
-#       blaze: false
-#       mushroom_cow: false
-#       magma_cube: false
-#       snowman: false
-  
-#   # Maximum height the creeper should explode. -1 allows them to explode everywhere.
-#   # Set prevent.creeper-explosion to true, if you want to disable creeper explosions.
-#   creeper:
-#     max-height: -1
-  
-#   # Protect various blocks.
-#   protect:
-#     # Protect all signs
-#     signs: true
+    # Which items should people be prevented from using
+    usage: 
 
-#     # Prevent users from destroying rails
-#     rails: true
+    # Which blocks should people be prevented from breaking
+    break:
 
-#     # Blocks below rails/signs are also protected if the respective rail/sign is protected.
-#     # This makes it more difficult to circumvent protection, and should be enabled.
-#     # This only has an effect if "rails" or "signs" is also enabled.
-#     block-below: true
+    # Which blocks should not be pushed by pistons
+    piston:
 
-#     # Prevent placing blocks above protected rails, this is to stop a potential griefing
-#     prevent-block-on-rails: false
-    
-#     # Store blocks / signs in memory before writing
-#     memstore: false
+  # General physics/behavior modifications
+  prevent:
+    lava-flow: false
+    water-flow: false
+    water-bucket-flow: false
+    fire-spread: true
+    lava-fire-spread: true
+    flint-fire: false
+    lightning-fire-spread: true
+    portal-creation: false
+    tnt-explosion: false
+    tnt-playerdamage: false
+    fireball-explosion: false
+    fireball-fire: false
+    fireball-playerdamage: false
+    creeper-explosion: false
+    creeper-playerdamage: false
+    creeper-blockdamage: true
+    enderdragon-blockdamage: true
+    enderman-pickup: false
+    villager-death: false
+    # Monsters won't follow players
+    # permission essentials.protect.entitytarget.bypass disables this
+    entitytarget: false
+    # Prevent the spawning of creatures
+    spawn:
+      chicken: false
+      cow: false
+      creeper: false
+      ghast: false
+      giant: false
+      monster: false
+      pig: false
+      pig_zombie: false
+      sheep: false
+      skeleton: false
+      slime: false
+      spider: false
+      squid: false
+      zombie: false
+      wolf: false
+      cave_spider: false
+      enderman: false
+      silverfish: false
+      ender_dragon: false
+      villager: false
+      blaze: false
+      mushroom_cow: false
+      magma_cube: false
+      snowman: false
 
-#   # Disable various default physics and behaviors
-#   disable:
-#     # Should fall damage be disabled?
-#     fall: false
+  # Maximum height the creeper should explode. -1 allows them to explode everywhere.
+  # Set prevent.creeper-explosion to true, if you want to disable creeper explosions.
+  creeper:
+    max-height: 60
 
-#     # Users with the essentials.protect.pvp permission will still be able to attack each other if this is set to true.
-#     # They will be unable to attack users without that same permission node.
-#     pvp: false
+  # Protect various blocks.
+  protect:
+    # Protect all signs
+    signs: false
 
-#     # Should drowning damage be disabled?
-#     # (Split into two behaviors; generally, you want both set to the same value)
-#     drown: false
-#     suffocate: false
+    # Prevent users from destroying rails
+    rails: false
 
-#     # Should damage via lava be disabled?  Items that fall into lava will still burn to a crisp. ;)
-#     lavadmg: false
+    # Blocks below rails/signs are also protected if the respective rail/sign is protected.
+    # This makes it more difficult to circumvent protection, and should be enabled.
+    # This only has an effect if "rails" or "signs" is also enabled.
+    block-below: false
 
-#     # Should arrow damage be disabled
-#     projectiles: false
+    # Prevent placing blocks above protected rails, this is to stop a potential griefing
+    prevent-block-on-rails: false
 
-#     # This will disable damage from touching cacti.
-#     contactdmg: false
+    # Store blocks / signs in memory before writing
+    memstore: false
 
-#     # Burn, baby, burn!  Should fire damage be disabled?
-#     firedmg: false
-    
-#     # Should the damage after hit by a lightning be disabled?
-#     lightning: false
+  # Disable various default physics and behaviors
+  disable:
+    # Should fall damage be disabled?
+    fall: false
 
-#     # Should people with build: false in permissions be allowed to build
-#     # Set true to disable building for those people
-#     build: true
-    
-#     # Should people with build: false in permissions be allowed to use items
-#     # Set true to disable useing for those people
-#     use: true
+    # Users with the essentials.protect.pvp permission will still be able to attack each other if this is set to true.
+    # They will be unable to attack users without that same permission node.
+    pvp: false
 
-#     # Should we tell people they are not allowed to build
-#     warn-on-build-disallow: true
+    # Should drowning damage be disabled?
+    # (Split into two behaviors; generally, you want both set to the same value)
+    drown: false
+    suffocate: false
+
+    # Should damage via lava be disabled?  Items that fall into lava will still burn to a crisp. ;)
+    lavadmg: false
+
+    # Should arrow damage be disabled
+    projectiles: false
+
+    # This will disable damage from touching cacti.
+    contactdmg: false
+
+    # Burn, baby, burn!  Should fire damage be disabled?
+    firedmg: false
+
+    # Should the damage after hit by a lightning be disabled?
+    lightning: false
+
+    # Should people with build: false in permissions be allowed to build
+    # Set true to disable building for those people
+    build: true
+
+    # Should people with build: false in permissions be allowed to use items
+    # Set true to disable useing for those people
+    use: true
+
+    # Should we tell people they are not allowed to build
+    warn-on-build-disallow: true
 
 
-#     # Disable weather options
-#     weather:
-#       storm: false
-#       thunder: false
-#       lightning: false
+    # Disable weather options
+    weather:
+      storm: false
+      thunder: false
+      lightning: false
 
 ############################################################
 # +------------------------------------------------------+ #
