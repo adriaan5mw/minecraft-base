@@ -1,4 +1,4 @@
-#version: 2.8.1
+#version: 2.8.4
 # If you change this file, it will not be automatically updated after the next release.
 #item,id,metadata
 stone,1,0
@@ -2501,4 +2501,4 @@ record9,2264,0
 record10,2265,0
 record11,2266,0
 
-#2dcd059fc42c39df3c8c47929f344d46
+#4d6ee06882bb3dc5b34201cec6c1cbfb

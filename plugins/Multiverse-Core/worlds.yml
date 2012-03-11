@@ -32,6 +32,8 @@ worlds:
       world: my_world
     autoload: true
     bedrespawn: true
+    type: NORMAL
+    portalform: ALL
   my_world_nether:
     seed: 8648858584246274819
     environment: NETHER
@@ -65,6 +67,8 @@ worlds:
       world: my_world_nether
     autoload: true
     bedrespawn: true
+    type: NORMAL
+    portalform: ALL
   my_world_the_end:
     seed: 8648858584246274819
     environment: THE_END
@@ -98,6 +102,8 @@ worlds:
       world: my_world_the_end
     autoload: true
     bedrespawn: true
+    type: NORMAL
+    portalform: ALL
   my_world_creative:
     seed: -1264822131588807993
     environment: NORMAL
@@ -131,3 +137,5 @@ worlds:
       world: my_world_creative
     autoload: true
     bedrespawn: true
+    type: NORMAL
+    portalform: ALL

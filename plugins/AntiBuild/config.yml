@@ -1,7 +1,0 @@
-interaction:
-    message: You are not allowed to perform that action.
-    check: false
-    messageCooldown: 3
-build:
-    message: You do not have permission to build.
-    messageCooldown: 3

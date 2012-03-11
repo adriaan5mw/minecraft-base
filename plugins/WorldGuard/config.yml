@@ -37,7 +37,8 @@ ignition:
     block-tnt: false
     block-lighter: false
 regions:
-    max-region-count-per-player: 7
+    max-region-count-per-player:
+        default: 7
     claim-only-inside-existing-regions: false
     invincibility-removes-mobs: false
     max-claim-volume: 30000
@@ -45,6 +46,11 @@ regions:
     enable: true
     use-scheduler: true
     wand: 287
+    sql:
+        use: false
+        dsn: jdbc:mysql://localhost/worldguard
+        username: worldguard
+        password: worldguard
 simulation:
     sponge:
         redstone: false
@@ -55,7 +61,6 @@ fire:
     lava-spread-blocks: []
     disable-fire-spread-blocks: []
     disable-all-fire-spread: false
-suppress-tick-sync-warnings: false
 default:
     disable-health-regain: false
     pumpkin-scuba: false
@@ -67,6 +72,7 @@ mobs:
     block-creeper-block-damage: false
     disable-enderman-griefing: false
     block-creeper-explosions: false
+    block-enderdragon-block-damage: false
 dynamics:
     disable-grass-growth: false
     disable-ice-melting: false
@@ -79,7 +85,7 @@ blacklist:
     use-as-whitelist: false
     logging:
         console:
-            enable: true
+            enable: false
         file:
             path: worldguard/logs/%Y-%m-%d.log
             enable: false
@@ -120,3 +126,4 @@ player-damage:
     disable-contact-damage: false
     disable-lightning-damage: false
 auto-invincible-permission: false
+auto-invincible: false

@@ -38,4 +38,11 @@ permissions:
         admins:
             permissions:
             - '*'
-dinnerperms: true
+resolvers:
+    enabled:
+    - PluginPermissionsResolver
+    - PermissionsExResolver
+    - bPermissionsResolver
+    - NijiPermissionsResolver
+    - DinnerPermsResolver
+    - FlatFilePermissionsResolver
