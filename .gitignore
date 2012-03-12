@@ -21,5 +21,8 @@ maps/*
 */DIM*/session.lock
 */DIM*/uid.dat
 
+## Databases
+*.db
+
 ## Garbage
 .DS_Store
